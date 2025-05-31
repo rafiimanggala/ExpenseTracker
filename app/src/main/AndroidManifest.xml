@@ -24,9 +24,9 @@
             </intent-filter>
         </activity>
 
-        <!-- Tambahkan semua activity lainnya di sini -->
         <activity android:name=".ui.SignUpActivity" />
-        <!-- Tambahkan juga activity lain jika ada -->
+        <activity android:name=".ui.SignInSuccessActivity" />
+
 
     </application>
 
