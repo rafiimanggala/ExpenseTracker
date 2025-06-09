@@ -57,4 +57,10 @@
         android:name="com.example.expensetracker.ui.report.ReportFragment"
         android:label="Report"
         tools:layout="@layout/fragment_report" />
+    <!-- ✅ Profile Fragment -->
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.expensetracker.ui.profile.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile" />
 </navigation>

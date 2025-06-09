@@ -39,6 +39,10 @@ class MainActivity : AppCompatActivity() {
                     navigateSingleTopTo(R.id.reportFragment)
                     true
                 }
+                R.id.profileFragment -> {
+                    navigateSingleTopTo(R.id.profileFragment)
+                    true
+                }
                 else -> false
             }
         }
