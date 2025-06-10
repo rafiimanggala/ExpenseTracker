@@ -76,6 +76,7 @@ class SignInActivity : AppCompatActivity() {
                         if (user != null) {
                             // 🟢 Simpan sesi login ke SharedPreferences
                             with(sharedPref.edit()) {
+                                putInt("userId", user.id) // ✅ Simpan userId
                                 putString("username", user.username)
                                 putString("firstName", user.firstName)
                                 putString("lastName", user.lastName)
@@ -88,6 +89,7 @@ class SignInActivity : AppCompatActivity() {
                                 this@SignInActivity,
                                 MainActivity::class.java
                             ).apply {
+                                putExtra("userId", user.id) // ✅ Kirim userId juga
                                 putExtra("username", user.username)
                                 putExtra("firstName", user.firstName)
                                 putExtra("lastName", user.lastName)
@@ -95,6 +97,7 @@ class SignInActivity : AppCompatActivity() {
                             startActivity(intent)
                             finish()
                         }
+
 
                         // Reset login status agar tidak trigger ulang
                         authViewModel.resetLoginStatus()

@@ -1,6 +1,8 @@
 package com.example.expensetracker.ui
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.NavOptions
@@ -20,6 +22,18 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Ambil userId dari SharedPreferences dan log
+        val sharedPref = getSharedPreferences("session", MODE_PRIVATE)
+        val userId = sharedPref.getInt("userId", -1)
+        Log.d("MainActivity", "Logged in userId: $userId")
+
+        if (userId == -1) {
+            Log.e("MainActivity", "User ID not found. Redirecting to SignInActivity.")
+            startActivity(Intent(this, SignInActivity::class.java))
+            finish()
+            return
+        }
+
         val navHostFragment = supportFragmentManager
             .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
 
@@ -35,7 +49,7 @@ class MainActivity : AppCompatActivity() {
                     navigateSingleTopTo(R.id.budgetListFragment)
                     true
                 }
-                R.id.reportFragment -> {         // Tambahan ini
+                R.id.reportFragment -> {
                     navigateSingleTopTo(R.id.reportFragment)
                     true
                 }
@@ -59,4 +73,5 @@ class MainActivity : AppCompatActivity() {
         navController.navigate(destinationId, null, navOptions)
     }
 }
+
 

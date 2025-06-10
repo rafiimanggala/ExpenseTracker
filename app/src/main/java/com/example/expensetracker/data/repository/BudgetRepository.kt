@@ -10,17 +10,21 @@ class BudgetRepository(
     private val budgetDao: BudgetDao,
     private val expenseDao: ExpenseDao
 ) {
-    val allBudgets: LiveData<List<Budget>> = budgetDao.getAllBudgets()
-
     suspend fun insert(budget: Budget) = budgetDao.insertBudget(budget)
 
     suspend fun update(budget: Budget) = budgetDao.updateBudget(budget)
 
-    suspend fun getById(id: Int): Budget? = budgetDao.getBudgetById(id)
+    suspend fun getById(id: Int, userId: Int): Budget? = budgetDao.getBudgetById(id, userId)
 
-    fun getTotalExpenseForBudget(budgetId: Int): LiveData<Double> =
-        expenseDao.getTotalExpenseForBudget(budgetId)
+    fun getAllBudgets(userId: Int): LiveData<List<Budget>> =
+        budgetDao.getAllBudgets(userId)
 
-    fun getBudgetWithUsage(): LiveData<List<BudgetWithUsage>> = budgetDao.getBudgetWithUsage()
+    fun getBudgetWithUsage(userId: Int): LiveData<List<BudgetWithUsage>> =
+        budgetDao.getBudgetWithUsage(userId)
+
+    fun getTotalExpenseForBudget(budgetId: Int, userId: Int): LiveData<Double> =
+        expenseDao.getTotalExpenseForBudget(budgetId, userId)
 
 }
+
+
