@@ -6,7 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.expensetracker.data.dao.BudgetDao
 
-@Database(entities = [Budget::class, Expense::class, User::class], version = 6)
+@Database(entities = [Budget::class, Expense::class, User::class], version = 7)
 abstract class MyDatabase : RoomDatabase() {
 
     abstract fun budgetDao(): BudgetDao
