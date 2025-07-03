@@ -13,6 +13,7 @@
         android:text="Tanggal hari ini"
         android:textStyle="bold"
         android:textSize="16sp"
+        android:textColor="#673AB7"
         android:layout_marginBottom="8dp"/>
 
     <Spinner
@@ -35,6 +36,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sisa budget: Rp 0"
+        android:textColor="#673AB7"
         android:layout_marginBottom="16dp" />
 
     <EditText
@@ -43,6 +45,8 @@
         android:layout_height="wrap_content"
         android:hint="Masukkan nominal"
         android:inputType="numberDecimal"
+        android:textColor="#673AB7"
+        android:textColorHint="#9575CD"
         android:layout_marginBottom="8dp" />
 
     <EditText
@@ -51,12 +55,16 @@
         android:layout_height="wrap_content"
         android:hint="Keterangan"
         android:inputType="textCapSentences"
+        android:textColor="#673AB7"
+        android:textColorHint="#9575CD"
         android:layout_marginBottom="16dp" />
 
     <Button
         android:id="@+id/btnAddExpense"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Tambah Pengeluaran" />
+        android:text="Tambah Pengeluaran"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#673AB7"/>
 
 </LinearLayout>

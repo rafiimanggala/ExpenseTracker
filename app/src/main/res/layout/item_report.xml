@@ -17,25 +17,29 @@
             android:layout_height="wrap_content"
             android:text="Budget Name"
             android:textStyle="bold"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:textColor="#800080" />
 
         <TextView
             android:id="@+id/textUsed"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Terpakai: Rp0" />
+            android:text="Terpakai: Rp0"
+            android:textColor="#800080" />
 
         <TextView
             android:id="@+id/textMax"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Max: Rp0" />
+            android:text="Max: Rp0"
+            android:textColor="#800080" />
 
         <TextView
             android:id="@+id/textRemaining"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sisa: Rp0" />
+            android:text="Sisa: Rp0"
+            android:textColor="#800080" />
 
         <ProgressBar
             android:id="@+id/progressBar"

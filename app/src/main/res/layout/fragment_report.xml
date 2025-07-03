@@ -17,6 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Total: Rp0 / Rp0"
+        android:textColor="#800080"
         android:textSize="16sp"
         android:textStyle="bold"
         android:paddingTop="8dp"
